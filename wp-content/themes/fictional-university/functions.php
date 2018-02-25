@@ -6,4 +6,13 @@
     wp_enqueue_style('main_styles', get_stylesheet_uri(), NULL, microtime());
   }
   add_action('wp_enqueue_scripts', 'university_styles');
+
+  function university_features() {
+      register_nav_menu('header_menu_location', 'Header Menu Location');
+      register_nav_menu('footer_location_1', 'Footer Location One');
+      register_nav_menu('footer_location_2', 'Footer Location Two');
+      add_theme_support('title-tag');
+  }
+
+  add_action('after_setup_theme', 'university_features');
 ?>
