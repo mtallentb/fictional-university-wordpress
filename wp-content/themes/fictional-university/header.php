@@ -4,6 +4,7 @@
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- This allows WordPress to add the black admin toolbar to the top of the site. It also loads all of your enqueued scripts from functions.php -->
     <?php wp_head(); ?>
   </head>
   <body <?php body_class(); ?>>
@@ -14,11 +15,13 @@
       <i class="site-header__menu-trigger fa fa-bars" aria-hidden="true"></i>
       <div class="site-header__menu group">
         <nav class="main-navigation">
+            <!-- Registers a menu location within WordPress to put your main naivgation menu. -->
             <?php 
                 wp_nav_menu(array(
                     'theme_location' => 'header_menu_location'
                 ));
             ?>
+            <!-- Hard coded links for examples. -->
           <!-- <ul>
             <li><a href="<?php echo site_url('/about-us') ?>">About Us</a></li>
             <li><a href="<?php echo site_url('/programs') ?>">Programs</a></li>
