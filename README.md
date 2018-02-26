@@ -1,1 +1,1 @@
-# Custom WordPress for fictional university
+# Custom WordPress for Fictional University
