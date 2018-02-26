@@ -1,4 +1,5 @@
 <?php
+    // This function registers the Events custom post type for the WordPress Dashboard. register_post_type is a WordPress helper method that allows you to customize the post type. This file is inside the mu-plugins folder rather than the theme folder so that the user will not lose their custom post content if they switch to another theme.
     function university_post_types() {
         register_post_type('event', array(
             'supports' => array('title', 'editor', 'excerpt'),
