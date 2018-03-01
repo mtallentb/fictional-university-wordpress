@@ -22,6 +22,22 @@
         <div class="generic-content">
             <?php the_content(); ?>
         </div>
+
+        <?php 
+            // Pulls the custom field od 'related_programs'
+            $related_programs = get_field('related_programs');
+            
+            // If there are any related programs, add them to this unordered list. Otherwise, don't show anything.
+            if ($related_programs) {
+                echo '<hr class="section-break">';
+                echo '<h2 class="headline headline--medium">Related Program(s)</h2>';
+                echo '<ul class="link-list min-list">';
+                foreach($related_programs as $program) { ?>
+                    <li><a href="<?php echo get_the_permalink($program); ?>"><?php echo get_the_title($program); ?></a></li>
+                <?php }
+                echo '</ul>';
+            }
+        ?>
     </div>
   <?php }
 
